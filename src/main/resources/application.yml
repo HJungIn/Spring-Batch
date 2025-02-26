@@ -10,9 +10,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
+        highlight_sql: true
+    show-sql: true
     hibernate:
       ddl-auto: update
-    show-sql: true
 
   batch:
     jdbc:
@@ -20,3 +21,14 @@ spring:
 
 server:
   port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace # 파라미터 값 나오게 하기. ver.spring boot 3
